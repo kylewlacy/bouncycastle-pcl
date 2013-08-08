@@ -103,9 +103,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="bzip2\src\BZip2Constants.cs" />
     <Compile Include="bzip2\src\CBZip2InputStream.cs" />
     <Compile Include="bzip2\src\CBZip2OutputStream.cs" />
@@ -1223,8 +1220,20 @@
     <Compile Include="src\x509\X509V2CRLGenerator.cs" />
     <Compile Include="src\x509\X509V3CertificateGenerator.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="WinRTBouncyCastleKeyPair.pfx" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>WinRTBouncyCastleKeyPair.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
