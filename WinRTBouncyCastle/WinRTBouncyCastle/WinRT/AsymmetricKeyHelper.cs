@@ -40,7 +40,8 @@ namespace Org.BouncyCastle.WinRT
     using Windows.Security.Cryptography.Core;
 
     /// <summary>
-    /// Provides a set of extension methods to help use asymetric key extracted from a X509 certificate along with native cryptographic WinRT Apis
+    /// Provides a set of extension methods to help use asymetric key extracted from a X509 certificate 
+    /// along with native cryptographic WinRT Apis
     /// </summary>
     public static class BouncyCastleKeyHelper
     {
