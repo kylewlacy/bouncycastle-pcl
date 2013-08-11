@@ -1219,6 +1219,7 @@
     <Compile Include="src\x509\X509V2AttributeCertificateGenerator.cs" />
     <Compile Include="src\x509\X509V2CRLGenerator.cs" />
     <Compile Include="src\x509\X509V3CertificateGenerator.cs" />
+    <Compile Include="WinRT\AsymmetricKeyHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="WinRTBouncyCastle.snk" />
