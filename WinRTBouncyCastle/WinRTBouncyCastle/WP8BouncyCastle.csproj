@@ -417,7 +417,6 @@
     <Compile Include="src\asn1\tsp\TimeStampResp.cs" />
     <Compile Include="src\asn1\tsp\TSTInfo.cs" />
     <Compile Include="src\asn1\util\Asn1Dump.cs" />
-    <Compile Include="src\asn1\util\Dump.cs" />
     <Compile Include="src\asn1\util\FilterStream.cs" />
     <Compile Include="src\asn1\x500\DirectoryString.cs" />
     <Compile Include="src\asn1\x509\AccessDescription.cs" />
