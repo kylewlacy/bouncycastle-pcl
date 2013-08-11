@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>WinRTBouncyCastle</id>
+		<version>$version$</version>
+		<title>WinRT Bouncy Castle (Crypto library)</title>
+		<authors>Cyprien Autexier</authors>
+		<owners>Cyprien Autexier</owners>
+		<licenseUrl>https://w8bouncycastle.codeplex.com/license</licenseUrl>
+		<projectUrl>https://w8bouncycastle.codeplex.com/</projectUrl>
+		<iconUrl>http://www.bouncycastle.org/favicon.ico</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>The Bouncy Castle API provides many cryptoghraphic APIs to every developpers. It is a port targetting WinRT (Windows Store apps &amp; WP8) of the original C# branch</description>
+		<releaseNotes>Adding Windows 8 helpers to retrieve AsymmetricKey from certificates</releaseNotes>
+		<copyright>Copyright 2013</copyright>
+		<tags>Cryptography, Windows Store, 8, Phone WinRT</tags>
+	</metadata>
+	<files>
+		<file src="$OutputPath$WinRTBouncyCastle.dll" target="lib\windows8" />
+		<file src="$OutputPath$WinRTBouncyCastle.pdb" target="lib\windows8" />
+
+		<file src="$OutputPath$WP8BouncyCastle.dll" target="lib\windowsphone8" />
+		<file src="$OutputPath$WP8BouncyCastle.pdb" target="lib\windowsphone8" />
+
+		<file src="..\WinRTBouncyCastle\WinRTBouncyCastle\**\*.cs" target="src\WinRTBouncyCastle" exclude="..\src\WinRTBouncyCastle\obj\**" />
+
+		<file src="$IntermediatePath$WinRTBouncyCastle.Version.cs" target="src\WinRTBouncyCastle\Properties" />
+		<file src="$IntermediatePath$WP8BouncyCastle.Version.cs" target="src\WP8BouncyCastle\Properties" />
+	</files>
+</package>
