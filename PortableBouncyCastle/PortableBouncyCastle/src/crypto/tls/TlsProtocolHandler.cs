@@ -18,7 +18,6 @@ using Org.BouncyCastle.Math;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.Utilities;
 using Org.BouncyCastle.Utilities.Date;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Crypto.Tls
 {
@@ -1041,37 +1040,37 @@ namespace Org.BouncyCastle.Crypto.Tls
             }
         }
 
-		private async Task SafeWriteMessageAsync(ContentType type, byte[] buf, int offset, int len)
-		{
-			try
-			{
-				await rs.WriteMessageAsync(type, buf, offset, len);
-			}
-			catch (TlsFatalAlert e)
-			{
-				if (!this.closed)
-				{
-					this.FailWithError(AlertLevel.fatal, e.AlertDescription);
-				}
-				throw e;
-			}
-			catch (IOException e)
-			{
-				if (!closed)
-				{
-					this.FailWithError(AlertLevel.fatal, AlertDescription.internal_error);
-				}
-				throw e;
-			}
-			catch (Exception e)
-			{
-				if (!closed)
-				{
-					this.FailWithError(AlertLevel.fatal, AlertDescription.internal_error);
-				}
-				throw e;
-			}
-		}
+//		private async Task SafeWriteMessageAsync(ContentType type, byte[] buf, int offset, int len)
+//		{
+//			try
+//			{
+//				await rs.WriteMessageAsync(type, buf, offset, len);
+//			}
+//			catch (TlsFatalAlert e)
+//			{
+//				if (!this.closed)
+//				{
+//					this.FailWithError(AlertLevel.fatal, e.AlertDescription);
+//				}
+//				throw e;
+//			}
+//			catch (IOException e)
+//			{
+//				if (!closed)
+//				{
+//					this.FailWithError(AlertLevel.fatal, AlertDescription.internal_error);
+//				}
+//				throw e;
+//			}
+//			catch (Exception e)
+//			{
+//				if (!closed)
+//				{
+//					this.FailWithError(AlertLevel.fatal, AlertDescription.internal_error);
+//				}
+//				throw e;
+//			}
+//		}
 
 		/**
 		* Send some application data to the remote system.
@@ -1116,38 +1115,38 @@ namespace Org.BouncyCastle.Crypto.Tls
 			while (len > 0);
 		}
 
-        internal async Task WriteDataAsync(byte[] buf, int offset, int len)
-        {
-            if (this.closed)
-            {
-                if (this.failedWithError)
-                    throw new IOException(TLS_ERROR_MESSAGE);
-
-                throw new IOException("Sorry, connection has been closed, you cannot write more data");
-            }
-
-            /*
-            * Protect against known IV attack!
-            *
-            * DO NOT REMOVE THIS LINE, EXCEPT YOU KNOW EXACTLY WHAT
-            * YOU ARE DOING HERE.
-            */
-            await SafeWriteMessageAsync(ContentType.application_data, emptybuf, 0, 0);
-
-            do
-            {
-                /*
-                * We are only allowed to write fragments up to 2^14 bytes.
-                */
-                int toWrite = System.Math.Min(len, 1 << 14);
-
-                await SafeWriteMessageAsync(ContentType.application_data, buf, offset, toWrite);
-
-                offset += toWrite;
-                len -= toWrite;
-            }
-            while (len > 0);
-        }
+//        internal async Task WriteDataAsync(byte[] buf, int offset, int len)
+//        {
+//            if (this.closed)
+//            {
+//                if (this.failedWithError)
+//                    throw new IOException(TLS_ERROR_MESSAGE);
+//
+//                throw new IOException("Sorry, connection has been closed, you cannot write more data");
+//            }
+//
+//            /*
+//            * Protect against known IV attack!
+//            *
+//            * DO NOT REMOVE THIS LINE, EXCEPT YOU KNOW EXACTLY WHAT
+//            * YOU ARE DOING HERE.
+//            */
+//            await SafeWriteMessageAsync(ContentType.application_data, emptybuf, 0, 0);
+//
+//            do
+//            {
+//                /*
+//                * We are only allowed to write fragments up to 2^14 bytes.
+//                */
+//                int toWrite = System.Math.Min(len, 1 << 14);
+//
+//                await SafeWriteMessageAsync(ContentType.application_data, buf, offset, toWrite);
+//
+//                offset += toWrite;
+//                len -= toWrite;
+//            }
+//            while (len > 0);
+//        }
 
 		/// <summary>A Stream which can be used to send data.</summary>
 		[Obsolete("Use 'Stream' property instead")]
@@ -1287,9 +1286,9 @@ namespace Org.BouncyCastle.Crypto.Tls
 			TlsUtilities.WriteOpaque16(extValue, output);
 		}
 
-        internal Task FlushAsync()
-        {
-            return rs.FlushAsync();
-        }
+//        internal Task FlushAsync()
+//        {
+//            return rs.FlushAsync();
+//        }
     }
 }

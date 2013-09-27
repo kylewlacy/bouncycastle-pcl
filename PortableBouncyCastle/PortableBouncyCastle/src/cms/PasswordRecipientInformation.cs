@@ -7,7 +7,6 @@ using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -43,7 +42,7 @@ namespace Org.BouncyCastle.Cms
 		/**
 		 * decrypt the content and return an input stream.
 		 */
-		public async override Task<CmsTypedStream> GetContentStream(
+		public override CmsTypedStream GetContentStream(
 			ICipherParameters key)
 		{
 			try
@@ -65,7 +64,7 @@ namespace Org.BouncyCastle.Cms
 				KeyParameter sKey = ParameterUtilities.CreateKeyParameter(
 					GetContentAlgorithmName(), keyWrapper.Unwrap(encryptedKey, 0, encryptedKey.Length));
 
-				return await GetContentFromSessionKey(sKey);
+				return GetContentFromSessionKey(sKey);
 			}
 			catch (SecurityUtilityException e)
 			{

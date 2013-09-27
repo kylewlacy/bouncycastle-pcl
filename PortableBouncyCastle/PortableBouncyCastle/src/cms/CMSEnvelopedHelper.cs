@@ -11,7 +11,6 @@ using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.Utilities;
 using Org.BouncyCastle.Utilities.IO;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -159,7 +158,7 @@ namespace Org.BouncyCastle.Cms
 				get { return this.mac; }
 			}
 
-			public async Task<CmsReadable> GetReadable(KeyParameter sKey)
+			public CmsReadable GetReadable(KeyParameter sKey)
 			{
 				string macAlg = this.algorithm.ObjectID.Id;
 //				Asn1Object sParams = this.algorithm.Parameters.ToAsn1Object();
@@ -223,7 +222,7 @@ namespace Org.BouncyCastle.Cms
 				{
 					return new CmsProcessableInputStream(
 						new TeeInputStream(
-							await readable.GetInputStream(),
+							readable.GetInputStream(),
 							new MacOutputStream(this.mac)));
 				}
 				catch (IOException e)
@@ -255,7 +254,7 @@ namespace Org.BouncyCastle.Cms
 				get { return this.cipher; }
 			}
 
-			public async Task<CmsReadable> GetReadable(KeyParameter sKey)
+			public CmsReadable GetReadable(KeyParameter sKey)
 			{
 				try
 				{
@@ -300,7 +299,7 @@ namespace Org.BouncyCastle.Cms
 				try
 				{
 					return new CmsProcessableInputStream(
-						new CipherStream(await readable.GetInputStream(), cipher, null));
+						new CipherStream(readable.GetInputStream(), cipher, null));
 				}
 				catch (IOException e)
 				{

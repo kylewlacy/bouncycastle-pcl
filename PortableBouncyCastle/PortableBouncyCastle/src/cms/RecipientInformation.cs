@@ -11,7 +11,6 @@ using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.Utilities;
 using Org.BouncyCastle.Utilities.Collections;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -74,14 +73,14 @@ namespace Org.BouncyCastle.Cms
             }
         }
 
-        internal async Task<CmsTypedStream> GetContentFromSessionKey(
+        internal CmsTypedStream GetContentFromSessionKey(
             KeyParameter sKey)
         {
-            CmsReadable readable = await secureReadable.GetReadable(sKey);
+            CmsReadable readable = secureReadable.GetReadable(sKey);
 
             try
             {
-                return new CmsTypedStream(await readable.GetInputStream());
+                return new CmsTypedStream(readable.GetInputStream());
             }
             catch (IOException e)
             {
@@ -89,12 +88,12 @@ namespace Org.BouncyCastle.Cms
             }
         }
 
-        public async Task<byte[]> GetContent(
+        public byte[] GetContent(
             ICipherParameters key)
         {
             try
             {
-                return CmsUtilities.StreamToByteArray((await GetContentStream(key)).ContentStream);
+                return CmsUtilities.StreamToByteArray(GetContentStream(key).ContentStream);
             }
             catch (IOException e)
             {
@@ -122,6 +121,6 @@ namespace Org.BouncyCastle.Cms
             return Arrays.Clone(resultMac);
         }
 
-        public abstract Task<CmsTypedStream> GetContentStream(ICipherParameters key);
+        public abstract CmsTypedStream GetContentStream(ICipherParameters key);
     }
 }

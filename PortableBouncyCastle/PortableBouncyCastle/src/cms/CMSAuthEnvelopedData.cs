@@ -6,7 +6,6 @@ using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Asn1.Cms;
 using Org.BouncyCastle.Asn1.X509;
 using Org.BouncyCastle.Crypto.Parameters;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -88,7 +87,7 @@ namespace Org.BouncyCastle.Cms
 				get { return null; }
 			}
 
-			public Task<CmsReadable> GetReadable(KeyParameter key)
+			public CmsReadable GetReadable(KeyParameter key)
 			{
 				// TODO Create AEAD cipher instance to decrypt and calculate tag ( MAC)
 				throw new CmsException("AuthEnveloped data decryption not yet implemented");

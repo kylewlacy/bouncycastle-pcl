@@ -85,19 +85,19 @@ namespace Org.BouncyCastle.Crypto.Tls
 			this.handler.WriteData(buf, off, len);
 		}
 
-        public System.Threading.Tasks.Task WriteAsync(byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken)
-        {
-            return this.handler.WriteDataAsync(buffer, offset, count); 
-        }
+//        public System.Threading.Tasks.Task WriteAsync(byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken)
+//        {
+//            return this.handler.WriteDataAsync(buffer, offset, count); 
+//        }
 
 		public override void WriteByte(byte b)
 		{
 			this.handler.WriteData(new byte[] { b }, 0, 1);
 		}
 
-        public System.Threading.Tasks.Task FlushAsync(System.Threading.CancellationToken cancellationToken)
-        {
-            return this.handler.FlushAsync();
-        }
+//        public System.Threading.Tasks.Task FlushAsync(System.Threading.CancellationToken cancellationToken)
+//        {
+//            return this.handler.FlushAsync();
+//        }
 	}
 }

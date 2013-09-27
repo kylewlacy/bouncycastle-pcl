@@ -9,7 +9,6 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.X509;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -103,12 +102,12 @@ namespace Org.BouncyCastle.Cms
 		/**
         * decrypt the content and return it as a byte array.
         */
-        public async override Task<CmsTypedStream> GetContentStream(
+        public override CmsTypedStream GetContentStream(
             ICipherParameters key)
         {
 			KeyParameter sKey = UnwrapKey(key);
 
-			return await GetContentFromSessionKey(sKey);
+			return GetContentFromSessionKey(sKey);
 		}
     }
 }

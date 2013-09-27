@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Crypto.Tls
 {
@@ -111,40 +110,40 @@ namespace Org.BouncyCastle.Crypto.Tls
             outStr.Flush();
         }
 
-        internal async Task WriteMessageAsync(
-            ContentType type,
-            byte[] message,
-            int offset,
-            int len)
-        {
-            if (type == ContentType.handshake)
-            {
-                UpdateHandshakeData(message, offset, len);
-            }
-
-            Stream cOut = writeCompression.Compress(buffer);
-
-            byte[] ciphertext;
-            if (cOut == buffer)
-            {
-                ciphertext = writeCipher.EncodePlaintext(type, message, offset, len);
-            }
-            else
-            {
-                cOut.Write(message, offset, len);
-                cOut.Flush();
-                ciphertext = writeCipher.EncodePlaintext(type, buffer.ToArray(), 0, (int)buffer.Position);
-                buffer.SetLength(0);
-            }
-
-            byte[] writeMessage = new byte[ciphertext.Length + 5];
-            TlsUtilities.WriteUint8((byte)type, writeMessage, 0);
-            TlsUtilities.WriteVersion(writeMessage, 1);
-            TlsUtilities.WriteUint16(ciphertext.Length, writeMessage, 3);
-            Array.Copy(ciphertext, 0, writeMessage, 5, ciphertext.Length);
-            await outStr.WriteAsync(writeMessage, 0, writeMessage.Length);
-            await outStr.FlushAsync();
-        }
+//        internal async Task WriteMessageAsync(
+//            ContentType type,
+//            byte[] message,
+//            int offset,
+//            int len)
+//        {
+//            if (type == ContentType.handshake)
+//            {
+//                UpdateHandshakeData(message, offset, len);
+//            }
+//
+//            Stream cOut = writeCompression.Compress(buffer);
+//
+//            byte[] ciphertext;
+//            if (cOut == buffer)
+//            {
+//                ciphertext = writeCipher.EncodePlaintext(type, message, offset, len);
+//            }
+//            else
+//            {
+//                cOut.Write(message, offset, len);
+//                cOut.Flush();
+//                ciphertext = writeCipher.EncodePlaintext(type, buffer.ToArray(), 0, (int)buffer.Position);
+//                buffer.SetLength(0);
+//            }
+//
+//            byte[] writeMessage = new byte[ciphertext.Length + 5];
+//            TlsUtilities.WriteUint8((byte)type, writeMessage, 0);
+//            TlsUtilities.WriteVersion(writeMessage, 1);
+//            TlsUtilities.WriteUint16(ciphertext.Length, writeMessage, 3);
+//            Array.Copy(ciphertext, 0, writeMessage, 5, ciphertext.Length);
+//            await outStr.WriteAsync(writeMessage, 0, writeMessage.Length);
+//            await outStr.FlushAsync();
+//        }
 
         internal void UpdateHandshakeData(
             byte[] message,
@@ -192,10 +191,10 @@ namespace Org.BouncyCastle.Crypto.Tls
             outStr.Flush();
         }
 
-        internal Task FlushAsync()
-        {
-            return outStr.FlushAsync();
-        }
+//        internal Task FlushAsync()
+//        {
+//            return outStr.FlushAsync();
+//        }
 
         private static byte[] DoFinal(CombinedHash ch)
         {

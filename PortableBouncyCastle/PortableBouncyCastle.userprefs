@@ -1,41 +1,24 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PortableBouncyCastle/src/cms/CMSProcessableFile.cs">
-    <Files>
-      <File FileName="PortableBouncyCastle/src/cms/CMSProcessableFile.cs" Line="43" Column="6" />
-      <File FileName="../../bouncycastle/crypto/src/cms/CMSProcessableFile.cs" Line="11" Column="24" />
-      <File FileName="PortableBouncyCastle/src/crypto/prng/CryptoApiRandomGenerator.cs" Line="2" Column="23" />
-      <File FileName="PortableBouncyCastle/src/crypto/prng/ThreadedSeedGenerator.cs" Line="37" Column="42" />
-      <File FileName="PortableBouncyCastle/src/openpgp/PgpLiteralDataGenerator.cs" Line="7" Column="23" />
-      <File FileName="PortableBouncyCastle/src/openpgp/PgpUtilities.cs" Line="14" Column="23" />
-      <File FileName="PortableBouncyCastle/Portable/Security/Cryptography/RNGCryptoServiceProvider.cs" Line="3" Column="27" />
-      <File FileName="PortableBouncyCastle/src/util/Platform.cs" Line="10" Column="11" />
-      <File FileName="PortableBouncyCastle/src/crypto/tls/TlsStream.cs" Line="98" Column="16" />
-      <File FileName="PortableBouncyCastle/FastFix/ReflectionHelpers.cs" Line="29" Column="43" />
-      <File FileName="PortableBouncyCastle/src/cms/CMSEnvelopedHelper.cs" Line="228" Column="6" />
-      <File FileName="PortableBouncyCastle/Portable/IO/FileStream.cs" Line="9" Column="41" />
-    </Files>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="PortableBouncyCastle" expanded="True">
+          <Node name="PortableBouncyCastle" expanded="True" selected="True">
+            <Node name="References" expanded="True" />
             <Node name="FastFix" expanded="True" />
             <Node name="Portable" expanded="True">
               <Node name="IO" expanded="True" />
-              <Node name="Security" expanded="True">
-                <Node name="Cryptography" expanded="True" />
-              </Node>
             </Node>
             <Node name="src" expanded="True">
-              <Node name="cms" expanded="True">
-                <Node name="CMSProcessableFile.cs" selected="True" />
-              </Node>
+              <Node name="cms" expanded="True" />
               <Node name="crypto" expanded="True">
-                <Node name="prng" expanded="True" />
                 <Node name="tls" expanded="True" />
               </Node>
-              <Node name="openpgp" expanded="True" />
               <Node name="util" expanded="True" />
+              <Node name="x509" expanded="True">
+                <Node name="store" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

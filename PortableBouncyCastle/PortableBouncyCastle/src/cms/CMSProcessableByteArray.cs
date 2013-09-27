@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -18,12 +17,12 @@ namespace Org.BouncyCastle.Cms
 			this.bytes = bytes;
 		}
 
-		public async Task<Stream> GetInputStream()
+		public Stream GetInputStream()
 		{
 			return new MemoryStream(bytes, false);
 		}
 
-		public async virtual Task Write(Stream zOut)
+		public virtual void Write(Stream zOut)
 		{
 			zOut.Write(bytes, 0, bytes.Length);
 		}

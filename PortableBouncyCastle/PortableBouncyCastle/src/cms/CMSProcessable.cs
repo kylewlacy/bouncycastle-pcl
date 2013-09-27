@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -12,7 +11,7 @@ namespace Org.BouncyCastle.Cms
 		/// <remarks>
 		/// This routine may be called multiple times.
 		/// </remarks>
-        Task Write(Stream outStream);
+        void Write(Stream outStream);
 
         object GetContent();
     }

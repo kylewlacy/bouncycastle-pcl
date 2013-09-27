@@ -15,7 +15,6 @@ using Org.BouncyCastle.Math;
 using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.X509;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -208,7 +207,7 @@ namespace Org.BouncyCastle.Cms
 		/**
 		* decrypt the content and return an input stream.
 		*/
-		public async override Task<CmsTypedStream> GetContentStream(
+		public override CmsTypedStream GetContentStream(
 			ICipherParameters key)
 		{
 			if (!(key is AsymmetricKeyParameter))
@@ -221,7 +220,7 @@ namespace Org.BouncyCastle.Cms
 
 			KeyParameter sKey = GetSessionKey(receiverPrivateKey);
 
-			return await GetContentFromSessionKey(sKey);
+			return GetContentFromSessionKey(sKey);
 		}
 	}
 }

@@ -43,7 +43,6 @@ namespace Org.BouncyCastle.Utilities
 //			if (!enumType.IsEnum())
 //				throw new ArgumentException("Not an enumeration type", "enumType");
 
-#if NETCF_1_0 || NETCF_2_0 || SILVERLIGHT
             IList result = Platform.CreateArrayList();
 			FieldInfo[] fields = enumType.GetFields(BindingFlags.Static | BindingFlags.Public);
 			foreach (FieldInfo field in fields)
@@ -53,9 +52,6 @@ namespace Org.BouncyCastle.Utilities
             object[] arr = new object[result.Count];
             result.CopyTo(arr, 0);
             return arr;
-#else
-			return Enum.GetValues(enumType);
-#endif
 		}
 
 		internal static Enum GetArbitraryValue(System.Type enumType)

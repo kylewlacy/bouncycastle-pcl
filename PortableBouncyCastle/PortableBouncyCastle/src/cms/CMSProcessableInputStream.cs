@@ -2,7 +2,6 @@ using System;
 using System.IO;
 
 using Org.BouncyCastle.Utilities.IO;
-using System.Threading.Tasks;
 
 namespace Org.BouncyCastle.Cms
 {
@@ -18,14 +17,14 @@ namespace Org.BouncyCastle.Cms
 			this.input = input;
 		}
 
-		public async Task<Stream> GetInputStream()
+		public Stream GetInputStream()
 		{
 			CheckSingleUsage();
 
 			return input;
 		}
 
-		public async Task Write(Stream output)
+		public void Write(Stream output)
 		{
 			CheckSingleUsage();
 

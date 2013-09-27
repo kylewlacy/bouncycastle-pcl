@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using Org.BouncyCastle.Portable.IO;
 
 using Org.BouncyCastle.Utilities.IO;
@@ -32,16 +31,16 @@ namespace Org.BouncyCastle.Cms
 			_bufSize = bufSize;
 		}
 
-		public async virtual Task<Stream> GetInputStream()
+		public virtual Stream GetInputStream()
 		{
-			return await FileStream.Create(
+			return FileStream.Create(
 				_file.FullName, FileMode.Open, FileAccess.Read, FileShare.Read, _bufSize);
 		}
 
-		public async virtual Task Write(
+		public virtual void Write(
 			Stream zOut)
 		{
-			Stream inStr = await GetInputStream();
+			Stream inStr = GetInputStream();
 			Streams.PipeAll(inStr, zOut);
 			inStr.Dispose();
 		}
