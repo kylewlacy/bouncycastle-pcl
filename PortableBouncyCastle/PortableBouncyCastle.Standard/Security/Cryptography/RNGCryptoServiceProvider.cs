@@ -1,8 +1,10 @@
+using Tiko;
 using InternalRNGCSP = System.Security.Cryptography.RNGCryptoServiceProvider;
 using AbstractRNGCSP = Org.BouncyCastle.Portable.Security.Cryptography.RNGCryptoServiceProvider;
 
 namespace Org.BouncyCastle.Standard.Security.Cryptography
 {
+	[Resolves(typeof(AbstractRNGCSP))]
 	public class RNGCryptoServiceProvider : AbstractRNGCSP
 	{
 		protected InternalRNGCSP InternalRNGCSP;

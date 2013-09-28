@@ -1,9 +1,11 @@
 using System;
+using Tiko;
 using AbstractFileInfo = Org.BouncyCastle.Portable.IO.FileInfo;
 using InternalFileInfo = System.IO.FileInfo;
 
 namespace Org.BouncyCastle.Standard.IO
 {
+	[Resolves(typeof(AbstractFileInfo))]
 	public class FileInfo : AbstractFileInfo
 	{
 		public FileInfo ()

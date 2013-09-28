@@ -1,9 +1,11 @@
 using System;
+using Tiko;
 using InternalFileStream = System.IO.FileStream;
 using AbstractFileStream = Org.BouncyCastle.Portable.IO.FileStream;
 
 namespace Org.BouncyCastle.Standard.IO
 {
+	[Resolves(typeof(AbstractFileStream))]
 	public class FileStream : AbstractFileStream
 	{
 		protected InternalFileStream InternalFileStream;
