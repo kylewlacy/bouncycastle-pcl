@@ -2,7 +2,7 @@ using System;
 using AbstractFileInfo = Org.BouncyCastle.Portable.IO.FileInfo;
 using InternalFileInfo = System.IO.FileInfo;
 
-namespace Org.BouncyCastle.Portable.Standard.IO
+namespace Org.BouncyCastle.Standard.IO
 {
 	public class FileInfo : AbstractFileInfo
 	{

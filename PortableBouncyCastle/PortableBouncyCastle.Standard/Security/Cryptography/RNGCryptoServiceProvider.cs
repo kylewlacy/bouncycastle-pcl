@@ -1,7 +1,7 @@
 using InternalRNGCSP = System.Security.Cryptography.RNGCryptoServiceProvider;
 using AbstractRNGCSP = Org.BouncyCastle.Portable.Security.Cryptography.RNGCryptoServiceProvider;
 
-namespace Org.BouncyCastle.Portable.Standard.Security.Cryptography
+namespace Org.BouncyCastle.Standard.Security.Cryptography
 {
 	public class RNGCryptoServiceProvider : AbstractRNGCSP
 	{

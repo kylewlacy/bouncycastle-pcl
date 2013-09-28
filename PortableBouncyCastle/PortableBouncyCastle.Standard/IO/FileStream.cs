@@ -2,7 +2,7 @@ using System;
 using InternalFileStream = System.IO.FileStream;
 using AbstractFileStream = Org.BouncyCastle.Portable.IO.FileStream;
 
-namespace Org.BouncyCastle.Portable.Standard.IO
+namespace Org.BouncyCastle.Standard.IO
 {
 	public class FileStream : AbstractFileStream
 	{

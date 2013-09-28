@@ -1,7 +1,7 @@
 using System;
 using Tiko;
 
-namespace Org.BouncyCastle.Portable.Standard
+namespace Org.BouncyCastle.Standard
 {
 	public static class Registrar
 	{

@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{69744BDF-4DA9-4154-90D1-A24F133E05F5}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Org.BouncyCastle.Portable.Standard</RootNamespace>
+    <RootNamespace>Org.BouncyCastle.Standard</RootNamespace>
     <AssemblyName>PortableBouncyCastle.Standard</AssemblyName>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
