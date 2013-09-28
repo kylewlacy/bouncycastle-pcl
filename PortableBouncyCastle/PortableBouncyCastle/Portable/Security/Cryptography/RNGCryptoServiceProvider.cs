@@ -1,4 +1,5 @@
 using System;
+using Tiko;
 
 namespace Org.BouncyCastle.Portable.Security.Cryptography
 {
@@ -6,9 +7,13 @@ namespace Org.BouncyCastle.Portable.Security.Cryptography
 	{
 		public abstract void GetBytes (byte[] data);
 
+		protected abstract void Initialize ();
+
 		public static RNGCryptoServiceProvider Create ()
 		{
-			throw new NotImplementedException ();
+			var cryptoServiceProvider = TikoContainer.Resolve<RNGCryptoServiceProvider> ();
+			cryptoServiceProvider.Initialize ();
+			return cryptoServiceProvider;
 		}
 	}
 }
