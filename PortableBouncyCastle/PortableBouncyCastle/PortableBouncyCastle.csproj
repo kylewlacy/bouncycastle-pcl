@@ -11,7 +11,7 @@
     <RootNamespace>Org.BouncyCastle</RootNamespace>
     <AssemblyName>PortableBouncyCastle</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile131</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile1</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1163,5 +1163,11 @@
     <Folder Include="Portable\Security\" />
     <Folder Include="Portable\Security\Cryptography\" />
     <Folder Include="Portable\IO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dependencies\TikoContainer\Tiko\Tiko.csproj">
+      <Project>{E4F6D527-F8C3-4B38-9D55-F93B47B7E12D}</Project>
+      <Name>Tiko</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

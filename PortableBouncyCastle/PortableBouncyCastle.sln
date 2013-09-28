@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableBouncyCastle", "PortableBouncyCastle\PortableBouncyCastle.csproj", "{494FFB56-5925-4307-BF83-3D256673B6F2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{B92AF8F9-8D0A-4CB9-8A97-C6466B6EE183}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiko", "..\Dependencies\TikoContainer\Tiko\Tiko.csproj", "{E4F6D527-F8C3-4B38-9D55-F93B47B7E12D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,13 @@ Global
 		{494FFB56-5925-4307-BF83-3D256673B6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{494FFB56-5925-4307-BF83-3D256673B6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{494FFB56-5925-4307-BF83-3D256673B6F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4F6D527-F8C3-4B38-9D55-F93B47B7E12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4F6D527-F8C3-4B38-9D55-F93B47B7E12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4F6D527-F8C3-4B38-9D55-F93B47B7E12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4F6D527-F8C3-4B38-9D55-F93B47B7E12D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4F6D527-F8C3-4B38-9D55-F93B47B7E12D} = {B92AF8F9-8D0A-4CB9-8A97-C6466B6EE183}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = PortableBouncyCastle\PortableBouncyCastle.csproj
