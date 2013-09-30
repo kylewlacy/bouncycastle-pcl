@@ -25,10 +25,9 @@ namespace Org.BouncyCastle.Security
 					IRandomGenerator gen = sha256Generator;
 					gen = new ReversedWindowGenerator(gen, 32);
 					SecureRandom sr = master[0] = new SecureRandom(gen);
-					
-					// TODO: Find other sources of entropy
+
 					sr.SetSeed(DateTime.Now.Ticks);
-//					sr.SetSeed(new ThreadedSeedGenerator().GenerateSeed(24, true));
+					sr.SetSeed(SeedGenerator.Create().GenerateSeed(24, true));
 					sr.GenerateSeed(1 + sr.Next(32));
 				}
 

@@ -86,7 +86,7 @@ namespace Org.BouncyCastle.Crypto.Tls
 			 *
 			 * Hopefully, 20 bytes in fast mode are good enough.
 			 */
-			byte[] seed = new ThreadedSeedGenerator().GenerateSeed(20, true);
+			byte[] seed = SeedGenerator.Create().GenerateSeed(20, true);
 
 			return new SecureRandom(seed);
 		}

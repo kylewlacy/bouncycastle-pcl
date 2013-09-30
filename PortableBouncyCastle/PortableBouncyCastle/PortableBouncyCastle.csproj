@@ -819,7 +819,6 @@
     <Compile Include="src\crypto\prng\DigestRandomGenerator.cs" />
     <Compile Include="src\crypto\prng\IRandomGenerator.cs" />
     <Compile Include="src\crypto\prng\ReversedWindowGenerator.cs" />
-    <Compile Include="src\crypto\prng\ThreadedSeedGenerator.cs" />
     <Compile Include="src\crypto\prng\VMPCRandomGenerator.cs" />
     <Compile Include="src\crypto\signers\DsaDigestSigner.cs" />
     <Compile Include="src\crypto\signers\DsaSigner.cs" />
@@ -1156,6 +1155,7 @@
     <Compile Include="Portable\IO\FileAccess.cs" />
     <Compile Include="Portable\Security\Cryptography\RNGCryptoServiceProvider.cs" />
     <Compile Include="Portable\IO\FileInfo.cs" />
+    <Compile Include="src\crypto\prng\SeedGenerator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

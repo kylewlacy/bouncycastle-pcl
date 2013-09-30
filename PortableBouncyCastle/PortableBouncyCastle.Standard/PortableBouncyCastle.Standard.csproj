@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Org.BouncyCastle.Standard</RootNamespace>
     <AssemblyName>PortableBouncyCastle.Standard</AssemblyName>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,13 +32,16 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\Cryptography\RNGCryptoServiceProvider.cs" />
+    <Compile Include="Crypto\Prng\ThreadedSeedGenerator.cs" />
     <Compile Include="IO\FileStream.cs" />
     <Compile Include="IO\FileInfo.cs" />
+    <Compile Include="Security\Cryptography\RNGCryptoServiceProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Crypto\" />
+    <Folder Include="Crypto\Prng\" />
     <Folder Include="IO\" />
     <Folder Include="Security\" />
     <Folder Include="Security\Cryptography\" />
@@ -48,7 +51,7 @@
       <Project>{494FFB56-5925-4307-BF83-3D256673B6F2}</Project>
       <Name>PortableBouncyCastle</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Dependencies\TikoContainer\Tiko\Tiko.csproj">
+    <ProjectReference Include="..\..\..\TikoContainer\Tiko\Tiko.csproj">
       <Project>{E4F6D527-F8C3-4B38-9D55-F93B47B7E12D}</Project>
       <Name>Tiko</Name>
     </ProjectReference>
